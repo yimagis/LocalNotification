@@ -71,7 +71,7 @@ abstract public class AbstractTriggerReceiver extends BroadcastReceiver {
         if (isFirstAlarmInFuture(options))
             return;
 
-        Intent notificationIntent = new Intent(cordova.getActivity(), cordova.getActivity().getClass());
+       /* Intent notificationIntent = new Intent(cordova.getActivity(), cordova.getActivity().getClass());
       notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
       PendingIntent pendingIntent = PendingIntent.getActivity(cordova.getActivity(), 0, notificationIntent, 0);
       try 
@@ -82,7 +82,7 @@ abstract public class AbstractTriggerReceiver extends BroadcastReceiver {
       {
         e.printStackTrace();
       }
-        return;
+        return; */
         
         Builder builder = new Builder(options);
         Notification notification = buildNotification(builder);
