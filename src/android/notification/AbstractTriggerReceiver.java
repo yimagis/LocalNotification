@@ -26,7 +26,8 @@ package de.appplant.cordova.plugin.notification;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
+import android.os.Bundle; 
+import android.app.PendingIntent;
 
 import org.json.JSONException;
 import org.json.JSONObject;
