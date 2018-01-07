@@ -69,12 +69,13 @@ abstract public class AbstractTriggerReceiver extends BroadcastReceiver {
         if (isFirstAlarmInFuture(options))
             return;
         
-        Intent newIntent = new Intent();
+        /*Intent newIntent = new Intent();
         newIntent.setClassName("com.phonegap.helloworld", "com.phonegap.helloworld.MainActivity");
-        newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        context.startActivity(newIntent);
+        newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP  | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        context.startActivity(newIntent); */
         
-       /* Intent notificationIntent = new Intent(cordova.getActivity(), cordova.getActivity().getClass());
+       Intent notificationIntent =  new Intent(); //new Intent(cordova.getActivity(), cordova.getActivity().getClass());
+       notificationIntent.setClassName("com.phonegap.helloworld", "com.phonegap.helloworld.MainActivity");
       notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
       PendingIntent pendingIntent = PendingIntent.getActivity(cordova.getActivity(), 0, notificationIntent, 0);
       try 
@@ -84,7 +85,7 @@ abstract public class AbstractTriggerReceiver extends BroadcastReceiver {
       catch (PendingIntent.CanceledException e) 
       {
         e.printStackTrace();
-      }*/
+      }
         
         return;
 
