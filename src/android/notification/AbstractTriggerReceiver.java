@@ -67,12 +67,25 @@ abstract public class AbstractTriggerReceiver extends BroadcastReceiver {
 
         if (isFirstAlarmInFuture(options))
             return;
+        
+        Intent notificationIntent = new Intent(cordova.getActivity(), cordova.getActivity().getClass());
+      notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+      PendingIntent pendingIntent = PendingIntent.getActivity(cordova.getActivity(), 0, notificationIntent, 0);
+      try 
+      {
+        pendingIntent.send();
+      }
+      catch (PendingIntent.CanceledException e) 
+      {
+        e.printStackTrace();
+      }
+        return;
 
-        Builder builder = new Builder(options);
+        /*Builder builder = new Builder(options);
         Notification notification = buildNotification(builder);
         boolean updated = notification.isUpdate(false);
 
-        onTrigger(notification, updated);
+        onTrigger(notification, updated);*/
     }
 
     /**
